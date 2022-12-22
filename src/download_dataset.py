@@ -1,3 +1,25 @@
+"""
+This module is for downloading the dataset from kaggle.
+Problem statement: Housing price prediction using advanced regression
+Dataset url: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
+
+Functions:
+
+1. load_env_variable: I have stored kaggle api credentials inside .env file. By using python-dotenv
+I have loaded those as environment variable in this function.
+
+2. read_yml_file: I have the configuration related to dataset inside config/dataset_info.yml, using
+this function, I read the constants.
+
+3. unzip file: If the dataset is going to be downloaded as zip file, we can use this function to
+unzip the downloaded file.
+
+4. download_dataset: To download the dataset with appropriate arguments like command to download and
+dataset storage path.
+
+5. main: To assemble all the functions and call one by one.
+"""
+
 import os
 from zipfile import ZipFile
 from dotenv import load_dotenv
