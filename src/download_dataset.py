@@ -100,7 +100,7 @@ def main():
     target_path = dataset_info['data-directory-path']
     ls_files = [i for i in os.listdir(target_path) if name_of_dataset in i]
     zip_file = None
-    if len(ls_files) != 0:
+    if ls_files:
         print("dataset downloaded!")
         extension = ls_files[0].split(os.path.sep)[-1]
         unzip_file(target_path, ls_files[0], extension)
