@@ -25,6 +25,8 @@ from zipfile import ZipFile
 from dotenv import load_dotenv
 import yaml
 
+from utility import read_yml_file
+
 
 def load_env_variables():
     """
@@ -33,19 +35,6 @@ def load_env_variables():
     """
     load_dotenv()
     print("env variable loaded successfully!")
-
-
-def read_yml_file(path_name, key='dataset'):
-    """
-    Will read the dataset_info.yml file and return the info about dataset
-    :return:
-    """
-    with open(path_name, "r") as stream:
-        try:
-            dataset_info = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
-    return dataset_info[key]
 
 
 def download_dataset(dataset_info):
