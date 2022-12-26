@@ -43,7 +43,7 @@ def download_dataset(dataset_info):
     :param dataset_info: dataset info dictionary
     :return: None
     """
-    raw_data_dir = dataset_info['data-directory-path']
+    raw_data_dir = dataset_info['raw_data_path']
     download_command = f"{dataset_info['download-command']} -c {dataset_info['name']} -p " \
                        f"{raw_data_dir}"
     if not os.path.exists(raw_data_dir):
@@ -73,7 +73,7 @@ def unzip_file(path, file_name, type_file='zip'):
         print(e.args)
 
 
-def main():
+def download():
     """
     Perform certain steps to have all the dataset files. Steps are: download, unzip
     and removing the zip file
@@ -86,7 +86,7 @@ def main():
     # download the dataset to the given directory
     download_dataset(dataset_info)
     name_of_dataset = dataset_info['name']
-    target_path = dataset_info['data-directory-path']
+    target_path = dataset_info['raw_data_path']
     ls_files = [i for i in os.listdir(target_path) if name_of_dataset in i]
     zip_file = None
     if len(ls_files) != 0:
@@ -101,4 +101,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    download()

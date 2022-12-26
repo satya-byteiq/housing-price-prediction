@@ -3,7 +3,11 @@ dataset:
  name: house-prices-advanced-regression-techniques
  type: competition
  download-command: kaggle competitions download
- data-directory-path: /home/satyapati/WorkSpace/Learning/Housing_price/data/raw
+ raw_data_path: /home/satyapati/WorkSpace/Learning/Housing_price/data/raw
+ train_file: train.csv
+ test_file: test.csv
+ metadata_path: /home/satyapati/WorkSpace/Learning/Housing_price/data/meta
+ processed_data_path: /home/satyapati/WorkSpace/Learning/Housing_price/data/processed
  steps:
   - download
   - unzip
